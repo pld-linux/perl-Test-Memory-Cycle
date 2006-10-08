@@ -6,6 +6,7 @@
 %define	pdir	Test
 %define	pnam	Memory-Cycle
 Summary:	Test::Memory::Cycle - Check for memory leaks and circular memory references
+Summary(pl):	Test::Memory::Cycle - kontrola wycieków pamiêci i zapêtlonych odniesieñ
 Name:		perl-Test-Memory-Cycle
 Version:	1.04
 Release:	1
@@ -29,6 +30,11 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
+This module checks for memory leaks and circular memory references.
+
+%description -l pl
+Ten modu³ sprawdza wystêpowanie wycieków pamiêci i zapêtlonych
+odniesieñ.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
