@@ -8,13 +8,12 @@
 Summary:	Test::Memory::Cycle - Check for memory leaks and circular memory references
 Summary(pl.UTF-8):	Test::Memory::Cycle - kontrola wycieków pamięci i zapętlonych odniesień
 Name:		perl-Test-Memory-Cycle
-Version:	1.04
+Version:	1.06
 Release:	1
-# same as perl
-License:	GPL v1+ or Artistic
+License:	Artistic v2.0
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-authors/id/P/PE/PETDANCE/Test-Memory-Cycle-%{version}.tar.gz
-# Source0-md5:	0c51e09f6bc23676ca0112b1a95e129d
+Source0:	http://www.cpan.org/modules/by-module/Test/Test-Memory-Cycle-%{version}.tar.gz
+# Source0-md5:	397e709ba33d3883b5fb2bc49e3a70b0
 URL:		http://search.cpan.org/dist/Test-Memory-Cycle/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -26,6 +25,7 @@ BuildRequires:	perl-Test-Pod >= 1.14
 BuildRequires:	perl-Test-Pod-Coverage >= 1.04
 BuildRequires:	perl-Test-Simple >= 0.62
 %endif
+Requires:	perl-Devel-Cycle >= 1.07
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -38,12 +38,6 @@ odniesień.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
-
-mv t/family-array.t{,fail}
-mv t/family-scalar.t{,fail}
-mv t/family-object.t{,fail}
-mv t/family-hash.t{,fail}
-mv t/cycle-exists.t{,fail}
 
 %build
 %{__perl} Makefile.PL \
@@ -63,7 +57,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc Changes README
+%doc Changes README.md
 %dir %{perl_vendorlib}/Test/Memory
-%{perl_vendorlib}/Test/Memory/*.pm
-%{_mandir}/man3/*
+%{perl_vendorlib}/Test/Memory/Cycle.pm
+%{_mandir}/man3/Test::Memory::Cycle.3pm*
