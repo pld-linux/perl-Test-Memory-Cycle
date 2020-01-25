@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_without	tests		# do not perform "make test"
 #
-%include	/usr/lib/rpm/macros.perl
 %define	pdir	Test
 %define	pnam	Memory-Cycle
 Summary:	Test::Memory::Cycle - Check for memory leaks and circular memory references
