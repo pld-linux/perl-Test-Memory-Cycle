@@ -8,7 +8,7 @@ Summary:	Test::Memory::Cycle - Check for memory leaks and circular memory refere
 Summary(pl.UTF-8):	Test::Memory::Cycle - kontrola wycieków pamięci i zapętlonych odniesień
 Name:		perl-Test-Memory-Cycle
 Version:	1.06
-Release:	1
+Release:	2
 License:	Artistic v2.0
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Test/Test-Memory-Cycle-%{version}.tar.gz
